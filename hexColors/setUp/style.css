@@ -1,0 +1,76 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    min-height: 100hv;
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    white-space: 2px;
+    align-items: center;
+    justify-content: center;
+}
+#top{
+    position: sticky;
+    top: 0%;
+    background-color: bisque;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.5);
+    
+}
+table{
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header{
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+span{
+    color: rgb(255, 119, 0);
+}
+.pages{
+    width: 80px;
+}
+table th a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+a:hover{color: violet;}
+main{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.container{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: 5px;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    width: 25rem;
+    padding: 0.2rem;
+}
+.btn{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: 5px;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 18px;
+}
+.btn:hover{
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: 5px;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.36);
+}
