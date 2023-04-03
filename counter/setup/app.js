@@ -7,6 +7,9 @@ btns.forEach(function (btn){
         const typeOfBtn = event.currentTarget.classList;
         if (typeOfBtn.contains('decrease')) {
          count--
+         if(count<0){
+            count=0
+         }
         }
         if (typeOfBtn.contains('reset')) {
          count=0

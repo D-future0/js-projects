@@ -43,7 +43,7 @@ img{
     box-shadow: 8px -4px skyblue;
 }
 article{
-    background-color: aliceblue;
+    background-color: white;
     border-radius: 10px;
 }
 #name{
@@ -79,7 +79,7 @@ article{
     cursor: pointer;
 }
 .forwardBtn:hover{color: rgba(135, 207, 235, 0.503);}
-.RandomBtn{
+.randomBtn{
     color: skyblue;
     background: none;
     font-size: 20px;
@@ -87,4 +87,4 @@ article{
     border-radius: 5px;
     cursor: pointer;
 }
-.RandomBtn:hover{color: rgba(135, 207, 235, 0.503);box-shadow: 0px 0px 5px;}
+.randomBtn:hover{color: rgba(135, 207, 235, 0.503);border: 2px solid skyblue;}
