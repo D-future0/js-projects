@@ -19,7 +19,7 @@ btns.forEach(function (btn){
         }
         digit.innerHTML= count 
         if (count>0) {
-         digit.style.color =`blue`
+         digit.style.color =`green`
         }
         else if (count<0) {
          digit.style.color =`red`
