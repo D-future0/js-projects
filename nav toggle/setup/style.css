@@ -1,0 +1,127 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+}
+nav{
+    position: sticky;
+    width: 100%;
+}
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px;
+}
+.logo{
+    padding:5px 1rem ;
+}
+img{
+    width: 5rem;
+
+}
+.toggle_btn{
+    align-self: center;
+    padding-right: 1rem;
+}
+#dropBtn{
+    border: none;
+    background:none;
+    transition:all 1s linear;
+}
+#dropBtn:hover{
+    transform: rotateZ(-90deg);
+}
+#menu{
+    cursor: pointer;
+}
+.nav_icons{
+    display: none;
+}
+.display_links{
+    height: 156px;
+    transition:all 1s;
+}
+nav ul{
+    overflow: hidden;
+    height: 0px;
+    list-style: none;
+    padding: 0px;
+    margin: 0%;
+    background-color: rgb(250, 247, 247);
+    transition:all 1s ease;
+}
+ul li{
+    padding: 0.5rem;
+    transition:all 1s ease;
+}
+ul li:hover{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(0, 0, 0, 0.1));
+    padding-left: 1.5rem;
+}
+ul li a{
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+a:hover{
+    color: rgb(5, 96, 251);
+}
+    @media screen and (min-width: 870px){
+    
+        .toggle_btn{
+        display: none;
+    }
+    #links{
+        height: auto;
+    }
+    nav ul{
+        overflow: visible;
+        display: flex!important;
+        flex-wrap: wrap;
+        background: transparent;
+    }
+    ul li{
+        padding-left: 1.5rem;
+        transition: none;
+    }
+    ul li:hover{
+        padding: auto;
+        background: transparent;
+        transition: none;
+    }
+    ul li a{
+        padding: 0px;
+        margin: 0px 1rem;
+    }
+    a:hover{
+        color: rgb(5, 96, 251);
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 0px 5px;
+    }
+    .nav_bar{
+        box-shadow: none;
+    }
+    .nav_icons{
+        height: auto;
+        padding:0px 1rem;
+    }
+    .fi-brands-facebook{
+        color: blue;
+    }
+    .fi-brands-instagram{
+        color: red;
+    }
+    .fi-brands-telegram{
+        color: blue;
+    }
+    .fi-brands-linkedin{
+        color: red;
+    }
+}
