@@ -1,0 +1,121 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    display: grid;
+    place-items: center;
+    line-height: 1.2;
+}
+section{
+    padding-top: 3rem;
+}
+h2{
+    line-height: 0%;
+}
+.title{
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.btn-container{
+    text-align: center;
+}
+.filter-btn{
+    color: goldenrod;
+    border:2px solid goldenrod;
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background: none;
+    text-transform: capitalize;
+}
+.filter-btn:hover{
+    transition: all 700ms ease;
+    color: white;
+    background-color: goldenrod;
+}
+/* ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+}
+ul li{
+    padding: 2rem 1rem;
+}
+ul li a{
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 20px;
+} */
+
+.underline{
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 2px solid goldenrod;
+    width: 4rem;
+    padding-bottom: 1rem;
+}
+.section-center{
+    width: 90vw;
+    max-width: 1170px;
+    display: grid;
+    gap: 1rem 2rem;
+    justify-items: center;
+    padding-top: 2rem;
+}
+.menu-item{
+    display: grid;
+    width: 300px;
+    gap: 1rem 0.5rem;
+    justify-content: center;
+}
+img{
+    object-fit: cover;
+    width: 400px;
+    border: 3px solid goldenrod;
+    border-radius: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    line-height: 0;
+    letter-spacing: 2px;
+}
+.price{
+    color: goldenrod;
+}
+@media screen and  (min-width:800px) {
+    .menu-item{
+        grid-template-columns: 250px 1fr;
+        gap: 0 1.50rem;
+        max-width: 45rem;
+        padding: 1rem 0rem;
+       }
+       .item-details{
+        min-width: 350px;
+        padding-left: 5.8rem;
+    }
+       img{
+        width: 350px;
+    }
+}
+@media screen and (min-width:1250px) {
+    img{
+        width: 280px;
+    }
+    .item-details{
+        min-width: 300px;
+        padding-left: 1.25rem;
+    }
+   .section-center{
+    min-width: 95vw;
+    grid-template-columns: 1fr 1fr;
+   }
+}
