@@ -68,35 +68,52 @@ const menu = [
     price:`N200.99`,
     img:"./food/item-10.JPG",
     info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
-    }
+    },
+    {id:11,
+    itemName:`Napolitan`,
+    category:`ice-cream`,
+    price:`N1549.99`,
+    img:"./food/item-11.jpeg",
+    info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
+    },
+    {id:12,
+    itemName:`pistachio`,
+    category:`ice-cream`,
+    price:`N1399.99`,
+    img:"./food/item-12.jpeg",
+    info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
+    },
+    {id:13,
+    itemName:`vanilla ice cream`,
+    category:`ice-cream`,
+    price:`N1799.99`,
+    img:"./food/item-13.JPG",
+    info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
+    },
+    {id:14,
+    itemName:`strawberry ice cream`,
+    category:`ice-cream`,
+    price:`N1649.99`,
+    img:"./food/item-14.JPG",
+    info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
+    },
+    {id:15,
+    itemName:`chocolate chip`,
+    category:`ice-cream`,
+    price:`N1499.99`,
+    img:"./food/item-15.JPG",
+    info:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste quis magnam suscipit impedit neque? Molestiae`
+    },    
+    
 ]
 
 const sectionCenter = document.querySelector(`.section-center`);
-const filerBtn = document.querySelectorAll(`.filter-btn`);
-// console.log(filerBtn)
+const btnContainer = document.querySelector(`.btn-container`)
 
 window.addEventListener(`DOMContentLoaded`, function () {
-    displayMenuItems(menu)
-}) 
-
-filerBtn.forEach((btn) => {
-    btn.addEventListener(`click`, (event) => {
-        const category = event.currentTarget.dataset.id;
-        let categoryMenu = menu.filter((item) => {
-            if (item.category === category){
-                return item
-            }
-        });
-        
-        if(category === "for you") {
-            displayMenuItems(menu)
-        }
-        else{
-            displayMenuItems(categoryMenu)
-        }
-        console.log(category)
-    })
-})
+    displayMenuItems(menu);
+    displayMenuBtns()
+});
 
 let displayMenuItems = (menuItem) => {
     
@@ -115,4 +132,38 @@ let displayMenuItems = (menuItem) => {
 })
 displayMenu = displayMenu.join(``)
 sectionCenter.innerHTML = displayMenu
+}
+
+let displayMenuBtns = ()=>{
+    const categories = menu.reduce((values, item)=>{
+        if(!values.includes(item.category)){
+         values.push(item.category);
+        }
+         return values
+     }, [`all`]);
+ 
+     const categoriesBtn = categories.map((category) => {
+         return `<button class="filter-btn" type="button" data-id=${category}>${category}</button>`
+     }).join(``);
+     btnContainer.innerHTML = categoriesBtn;
+ 
+     const filerBtn = document.querySelectorAll(`.filter-btn`);
+ 
+     filerBtn.forEach((btn) => {
+         btn.addEventListener(`click`, (event) => {
+             const category = event.currentTarget.dataset.id;
+             let categoryMenu = menu.filter((item) => {
+                 if (item.category === category){
+                     return item
+                 }
+             });
+             
+             if(category === "all") {
+                 displayMenuItems(menu)
+             }
+             else{
+                 displayMenuItems(categoryMenu)
+             }
+         })
+     })
 }

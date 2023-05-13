@@ -22,7 +22,7 @@ h2{
     color: goldenrod;
     border:2px solid goldenrod;
     padding: 5px 10px;
-    margin: 0px 10px;
+    margin: 5px 10px;
     border-radius: 5px;
     background: none;
     text-transform: capitalize;
@@ -32,26 +32,6 @@ h2{
     color: white;
     background-color: goldenrod;
 }
-/* ul{
-    list-style: none;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: center;
-    padding: 0%;
-    margin: 0%;
-}
-ul li{
-    padding: 2rem 1rem;
-}
-ul li a{
-    color: goldenrod;
-    border: 2px solid goldenrod;
-    border-radius: 10px;
-    padding: 5px 10px;
-    text-transform: capitalize;
-    text-decoration: none;
-    font-size: 20px;
-} */
 
 .underline{
     margin-left: auto;
@@ -100,11 +80,20 @@ header{
        }
        .item-details{
         min-width: 350px;
+        height: 146px;
+        overflow: ;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         padding-left: 5.8rem;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
        img{
         width: 350px;
     }
+    header{
+        line-height: normal;
+    } 
 }
 @media screen and (min-width:1250px) {
     img{

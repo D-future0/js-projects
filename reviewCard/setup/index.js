@@ -1,6 +1,6 @@
  const review = [
     {id: 1, name:`Chibuike Valentine`, img:`./person1.jpg`, job:`Graphic Designer`, info:`There are three responses to a piece of disign - yes, no, and WOW! Wow is the one i aim for.`},
-    {id: 2, name:`Boicreation`, img:`./person2.JPEG`, job:`Software Engineer`, info:`Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. ...[Therefore,] making it easy to read makes it easier to write.`},
+    {id: 2, name:`ifechukwu`, img:`./person2.JPEG`, job:`Software Engineer`, info:`Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. ...[Therefore,] making it easy to read makes it easier to write.`},
     {id: 3, img:`./person3.jpg`, name:`Okafor Vivian`, job:`Cyber Security`, info:`Security isn’t something you buy, it’s something you do, and it takes talented people to do it right.The most secure computer is the computer that's off.`},
     {id: 4, name:`Okafor Ifechukwu`, img:`./person4.JPEG`, job:`Web Designer`, info:`Sometimes, when you innovate, you make mistakes. It is best to admit them quickly and get on with improving your other innovations.`}
  ]
