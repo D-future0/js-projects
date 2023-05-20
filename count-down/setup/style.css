@@ -1,0 +1,75 @@
+body{
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    word-spacing: 1.5px;
+    letter-spacing: 1px;
+    margin: 0%;
+    padding: 0%;
+}
+h3{color: rgba(1, 137, 179, 0.644);
+   text-transform: uppercase;
+   line-height: 0%;
+   margin-top: 0.7rem;
+}
+h4{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-family: monospace;
+    color: rgb(37, 37, 37);
+}
+.section{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+.img{
+    width: 450px;
+}
+article{
+    width: 450px;
+    margin-bottom: 1rem;
+}
+.deadlines{
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto auto auto auto;
+}
+.deadlines-format{
+    background-color: rgba(1, 137, 179, 0.644);
+    text-align: center;
+    width: 5rem;
+    color: white;
+    padding: 5px;
+}
+.deadlines-format h4{
+    font-size: 2rem;
+    margin-top: 0.5px;
+    margin-bottom:10px;
+}
+.deadlines-format span{
+    font-size: 14px;
+}
+@media screen and (min-width:550px){
+    h3{font-size: 35px;}
+    h4{font-size: 18px;margin-top: 0px;}
+    p{
+        font-size: 17px;
+        margin-top: 0px;
+    }
+    .section{
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        padding-top: 4rem;
+    }
+    .img{
+        width: 550px;
+    }
+    article{
+        width: 550px;
+    }
+    .deadlines{
+        place-items:initial
+    }
+}

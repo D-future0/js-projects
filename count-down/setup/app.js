@@ -52,9 +52,6 @@ const timeSetup = ()=>{
         deadlines.innerHTML = `<h4>giveaway has expired</h4>`
     }
 };
-const countDown = setInterval(timeSetup, 1000)
-
-
-
+const countDown = setInterval(timeSetup, 1000);
 
  
