@@ -1,0 +1,50 @@
+body{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: Arial;
+    background-color: aliceblue;
+}
+.section{
+    width: 95vw;
+}
+h2{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+label{
+    color: blue;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+#value-input{
+    width: 2rem;
+    font-size: 16px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+#submit{
+    font-size: 16px;
+    color: green;
+    background-color: white;
+    text-transform: capitalize;
+    padding: 2px 15px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+#submit:hover{
+    color: white;
+    background-color: green;
+}
+.dummy-article{
+    padding-top: 3rem;
+}
+@media screen and (min-width: 650px) {
+    .section{
+        width: 40rem;
+    }
+}
+p{
+    padding-bottom: 2rem;
+}

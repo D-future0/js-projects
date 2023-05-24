@@ -9,7 +9,15 @@ const giveaway = document.querySelector(`.giveaway`);
 const deadlines = document.querySelector(`.deadlines`);
 const deadlinesTime = document.querySelectorAll(`.deadlines-format h4`);
 
-const futureDate = new Date(2023, 4, 30, 12, 00, 00);
+const temptDate = new Date()
+const temptYear = temptDate.getFullYear();
+const temptMonth = temptDate.getMonth();
+const temptDay = temptDate.getDate();
+
+// const futureDate = new Date(2023, 4, 30, 12, 00, 00);
+// 5 days ahead to avoid expired time
+const futureDate = new Date(temptYear, temptMonth, temptDay + 5, 12, 00, 00);
+
 
 const ourYear = futureDate.getFullYear();
 const ourDate = futureDate.getDate();
