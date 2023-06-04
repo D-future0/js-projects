@@ -1,4 +1,4 @@
-const button = document.querySelector(`.btn`);
+const button = document.querySelector(".btn");
 const videoContainer = document.querySelector(`.video-clip`);
 const preloader = document.querySelector(`.preloader`);
 
