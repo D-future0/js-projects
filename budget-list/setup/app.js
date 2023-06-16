@@ -6,9 +6,10 @@ const btnSubmit = document.querySelector(`.submit`);
 const listContainer = document.querySelector(`.budgetList-container`);
 const budgetList = document.querySelector(`.budgetlist`);
 const deleteAll = document.querySelector(`.clear-btn`);
+
 let editElement;
 let editFlag = false;
-let edigId = ``;
+let editId = ``;
 
 budgetForm.addEventListener(`submit`, addItems);
 deleteAll.addEventListener(`click`, clearAll)
@@ -28,22 +29,36 @@ function addItems(event) {
       element.setAttributeNode(artt);
       element.innerHTML = `<p class="item">${value}</p>
       <div class="btn-container">
-         <button type="botton" class="edith btn"><i class="fas fa-edit" style="color: green;"></i></button> 
-         <button type="botton" class="delete btn"><i class="fas fa-trash" style="color: red;"></i></button> 
+         <button type="botton" class="edit-btn"><i class="fas fa-edit" style="color: green;"></i></button> 
+         <button type="botton" class="delete-btn"><i class="fas fa-trash" style="color: red;"></i></button> 
       </div>`;
+      // select delete/edit btn
+      const deleteBtn = element.querySelector(`.delete-btn`);
+      const editBtn = element.querySelector(`.edit-btn`);
+      // addEventListener to delete/edit btn
+      deleteBtn.addEventListener(`click`, deleteItem);
+      editBtn.addEventListener(`click`, editItem);
       // update list
       budgetList.appendChild(element);
       console.log(element)
       listContainer.classList.add("show-container");
+      //  dis play alert
       displayAlert(`list successfully updated`, `success`);
 
       // set back to default
-      setBackToDefault()
+      setBackToDefault();
       // add to local storage
-      addToLocalStorage()
+      addToLocalStorage();
    }
    else if (value && editFlag){
-
+      editElement.innerHTML = value;
+      console.log(editElement)
+      //  display alert
+      displayAlert(`item successfully changed`, `success`);
+      // edit local storage
+      editLocalStorage(editId, value)
+      // set back to default
+      setBackToDefault();
    }
    else {
       displayAlert(`please input text`, `danger`);
@@ -64,13 +79,34 @@ function displayAlert(text, action){
 function setBackToDefault(){
    budgetText.value = ``;
    editFlag = false;
-   edigId = ``;
-   btnSubmit.textContent = `submit`
+   editId = ``;
+   btnSubmit.textContent = `Add`;
 }
 // add to local storage  
 function addToLocalStorage(Id, value){
 
-}
+};
+// delete btn
+function deleteItem(event){
+   // select delete item
+   const item = event.currentTarget.parentElement.parentElement;
+   // delete selected item
+   budgetList.removeChild(item);
+   if(budgetList.children.length === 0){
+      listContainer.classList.remove(`show-container`);
+   };
+   displayAlert(`Item deleted`, `danger`);
+};
+// edit btn
+function editItem(event){
+   const item = event.currentTarget.parentElement.parentElement;
+   // select edit item
+   editElement = event.currentTarget.parentElement.previousElementSibling;
+   budgetText.value = editElement.innerHTML;
+   editFlag = true; 
+   editId = item.dataset.id;
+   btnSubmit.textContent = `Edit`; 
+};
 // clear all 
 function clearAll(){
    const items = document.querySelectorAll(`.budget-item`);
@@ -83,3 +119,7 @@ function clearAll(){
    listContainer.classList.remove(`show-container`);
    setBackToDefault();
 };
+// local storage
+function editLocalStorage(id,value){
+
+}
