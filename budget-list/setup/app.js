@@ -13,6 +13,7 @@ let editId = ``;
 
 budgetForm.addEventListener(`submit`, addItems);
 deleteAll.addEventListener(`click`, clearAll)
+window.addEventListener(`DOMContentLoaded`, setupList)
 
 // functions
 function addItems(event) {
@@ -22,50 +23,32 @@ function addItems(event) {
    const id = new Date().getTime().toString();
 
    if (value && !editFlag){
-      const element = document.createElement(`article`);
-      element.classList.add(`budget-item`);
-      const artt = document.createAttribute(`data-id`);
-      artt.value = id;
-      element.setAttributeNode(artt);
-      element.innerHTML = `<p class="item">${value}</p>
-      <div class="btn-container">
-         <button type="botton" class="edit-btn"><i class="fas fa-edit" style="color: green;"></i></button> 
-         <button type="botton" class="delete-btn"><i class="fas fa-trash" style="color: red;"></i></button> 
-      </div>`;
-      // select delete/edit btn
-      const deleteBtn = element.querySelector(`.delete-btn`);
-      const editBtn = element.querySelector(`.edit-btn`);
-      // addEventListener to delete/edit btn
-      deleteBtn.addEventListener(`click`, deleteItem);
-      editBtn.addEventListener(`click`, editItem);
-      // update list
-      budgetList.appendChild(element);
-      console.log(element)
+      createList(id, value)
       listContainer.classList.add("show-container");
-      //  dis play alert
-      displayAlert(`list successfully updated`, `success`);
-
+      //  display alert
+      displayAlert(`list successfully updated`, `success`);  
+      // add to local storage
+      addToLocalStorage(id, value);
       // set back to default
       setBackToDefault();
-      // add to local storage
-      addToLocalStorage();
    }
    else if (value && editFlag){
       editElement.innerHTML = value;
-      console.log(editElement)
       //  display alert
       displayAlert(`item successfully changed`, `success`);
       // edit local storage
       editLocalStorage(editId, value)
       // set back to default
       setBackToDefault();
+      editLocalStorage(id,value)
    }
    else {
       displayAlert(`please input text`, `danger`);
    };
 
 };
-// functions
+/**** setup functions ****/
+
 // display alert 
 function displayAlert(text, action){
    showAlert.textContent = `${text}`;
@@ -82,20 +65,20 @@ function setBackToDefault(){
    editId = ``;
    btnSubmit.textContent = `Add`;
 }
-// add to local storage  
-function addToLocalStorage(Id, value){
-
-};
 // delete btn
 function deleteItem(event){
    // select delete item
    const item = event.currentTarget.parentElement.parentElement;
+   const id = item.dataset.id;
    // delete selected item
    budgetList.removeChild(item);
    if(budgetList.children.length === 0){
       listContainer.classList.remove(`show-container`);
    };
+   // display alert
    displayAlert(`Item deleted`, `danger`);
+   // remove from local storage
+   removeFromLocalStorage(id);
 };
 // edit btn
 function editItem(event){
@@ -118,8 +101,73 @@ function clearAll(){
    displayAlert(`you cleared all items from your list`, `danger`)
    listContainer.classList.remove(`show-container`);
    setBackToDefault();
+   localStorage.removeItem(`list`);
 };
-// local storage
-function editLocalStorage(id,value){
 
+/**** local store ****/
+
+// add to local storage  
+function addToLocalStorage(id,value) {
+   const budget = {id:id,value:value};
+   // iterate to see if we have any items in our localStorage
+   let items = localStorage.getItem(`list`)?JSON.parse(localStorage.getItem(`list`)):[]; 
+   items.push(budget)
+   localStorage.setItem(`list`, JSON.stringify(items));
+};
+// remove From Local Storage
+function removeFromLocalStorage(id){
+   let items = localStorage.getItem(`list`)?JSON.parse(localStorage.getItem(`list`)):[];
+
+    items = items.filter(function (item) {
+      if (item.id !== id){
+         return item;
+      }
+    })
+    localStorage.setItem(`list`, JSON.stringify(items));
+};
+
+function editLocalStorage(id,value){
+   let items = localStorage.getItem(`list`)?JSON.parse(localStorage.getItem(`list`)):[];
+   items = items.map(function (item){
+      if(item.id === id){
+         item.value = value;
+      }
+      return item
+   })
+   localStorage.setItem(`list`, JSON.stringify(items));
+}
+
+/**** setup list ****/
+
+function setupList(){
+   let items = localStorage.getItem(`list`)?JSON.parse(localStorage.getItem(`list`)):[];
+
+if (items.length > 0){
+   items = items.forEach(function(item){
+      createList (item.id, item.value)
+   });
+   listContainer.classList.add("show-container");
+}
+
+};
+// create list
+function createList (id, value){
+   const element = document.createElement(`article`);
+   element.classList.add(`budget-item`);
+   const artt = document.createAttribute(`data-id`);
+   artt.value = id;
+   element.setAttributeNode(artt);
+   element.innerHTML = `<p class="item">${value}</p>
+   <div class="btn-container">
+      <button type="botton" class="edit-btn"><i class="fas fa-edit" style="color: green;"></i></button> 
+      <button type="botton" class="delete-btn"><i class="fas fa-trash" style="color: red;"></i></button> 
+   </div>`;
+   // select delete/edit btn
+   const deleteBtn = element.querySelector(`.delete-btn`);
+   const editBtn = element.querySelector(`.edit-btn`);
+   // addEventListener to delete/edit btn
+   deleteBtn.addEventListener(`click`, deleteItem);
+   editBtn.addEventListener(`click`, editItem);
+   // update list
+   budgetList.appendChild(element);
 }
