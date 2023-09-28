@@ -39,9 +39,9 @@ aside{
     transform: translate(-100%);
 }
 .show-sidebar{
-    transform: translate(0);
+    transform: translate(0%);
 }
-img{
+img{ 
     width: 5rem;
     padding: 0.5rem;
 }

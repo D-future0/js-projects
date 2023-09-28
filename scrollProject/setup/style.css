@@ -15,7 +15,7 @@ h1{
     text-transform: uppercase;
 }
 header{
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient( rgba(0, 0, 0, 0.301), rgba(153, 2, 2, 0.3), rgba(131, 2, 131, 0.356), rgba(2, 2, 153, 0.3)),url("/wed-img/albert.JPG");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */

@@ -1,0 +1,15 @@
+features of the site
+Company Name: company’s name would be on the homepage, reassuring visitors they’ve come to the website they were looking for.
+Logo:Logos is also high up on the homepage. While costumers may not always remember the company name, they may recognize the company by logo.
+Navigation Bar: a navigation bar be positioned at the top to empower users to explore the site and find their desired products or information
+Images: the website is accompanied by some of header image and body image to provide visitors with a visual.
+Internal Links: The purpose of a website isn’t just to get people to your homepage. Rather, use your homepage to spur visitors to other parts of the site and get users to stay on your page longer, which increases the odds they’ll become a customer.
+Website Footer Features:The footer sits at the bottom of each page, providing links that help visitors navigate to popular site pages.
+Social Media Icons: The power of social media marketing cannot be overstated. In order to get visitors over to the company Twitter and Facebook pages and so on.
+Website About Page Features: An about us page which leads visitors to learn more about the organization.
+Contact Info: Contact information gives users a way to get in touch with the company. Include a phone number and potentially a support or informational email address on the company about page. This way, anyone who has further questions or who is experiencing issues with the company's service can make contact quickly.
+Functionality:  this is just a list of features your product has and What it can accomplish for other professionals.
+Blog Internal Links: If a visitor is interested in the blogs, it’s possible they would be interested in a different blog of similar devices. Take this opportunity to include a bar or list of recommended content that could potentially keep them on the site for longer.
+
+
+
