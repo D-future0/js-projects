@@ -26,6 +26,7 @@ body {
 }
 /* navigation style */
 .navbar {
+    position: sticky;
     height: 5rem;
     background: transparent;
     display: flex;
@@ -72,7 +73,7 @@ body {
 /* banner style */
 .header{
     min-height: calc(100vh - 5rem);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/banner.jpg) center/cover no-repeat ;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(/img/banner.jpg) center/cover no-repeat ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +121,7 @@ body {
     margin-bottom: 2rem;
     letter-spacing: var(--spacing);
 }
-.product-center{
+.products-center{
     width: 90vw;
     max-width: 1170px;
     display: grid;
@@ -188,7 +189,7 @@ body {
     background-color: #f09e516b;
     transition: var(--transition);
     z-index: 2;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 .cart{
     position: fixed;
@@ -199,7 +200,13 @@ body {
     background-color: var(--primaryWhite);
     transition: var(--transition);
     z-index: 3;
-    /* transform: translateX(100); */
+    transform: translateX(100);
+}
+.show-cart{
+    transform: translateX(100);
+}
+.transparentBckg{
+    visibility: visible;
 }
 .cart h2{
     text-align: center;
@@ -226,6 +233,15 @@ body {
 }
 .cart-items div:nth-child(3) {
     text-align: center;
+}
+.cart-items h4{
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+}
+.cart-items h5{
+    margin: 0.5rem 0rem;
+    letter-spacing: var(--spacing);
 }
 .cart-footer{
     letter-spacing: var(--spacing);
