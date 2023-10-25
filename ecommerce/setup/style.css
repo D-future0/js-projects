@@ -201,6 +201,7 @@ body {
     transition: var(--transition);
     z-index: 3;
     transform: translateX(100%);
+    overflow: scroll;
 }
 .show-cart{
     transform: translateX(0);

@@ -117,6 +117,20 @@ class UI{
         cartOverlay.classList.add(`transparentBckg`);
         cartDom.classList.add(`show-cart`);
     }
+    setupAPP(){
+        cart = storage.getCart();
+        this.setCartValue(cart);
+        this.populateCart(cart);
+        cartBtn.addEventListener(`click`, this.showCart);
+        closeCart.addEventListener(`click`, this.hideCart);
+    }
+    populateCart(cart){
+        cart = cart.forEach(item =>this.diplayCartItems(item))
+    }
+    hideCart(){
+        cartOverlay.classList.remove(`transparentBckg`);
+        cartDom.classList.remove(`show-cart`);
+    }
 };
 // local storage   
 class storage{
@@ -130,12 +144,17 @@ class storage{
     static saveCart(cart){
         localStorage.setItem('cart', JSON.stringify(cart));
     }
+    static getCart(){
+        return localStorage.getItem(`cart`)?JSON.parse(localStorage.getItem(`cart`)):[];
+    }
 }
 
 // add eventlistener
 document.addEventListener(`DOMContentLoaded`, ()=>{
     const ui = new UI();
     const products = new Products();
+    // setup App
+    ui.setupAPP()
     // get all product
     products.getProducts().then(products => {
         ui.displayProducts(products);
