@@ -3,6 +3,7 @@ const cartBtn = document.querySelector(`.cart-btn`);
 const closeCart = document.querySelector(`.close-cart`);
 const cartOverlay = document.querySelector(`.cart-overlay`);
 const cartDom = document.querySelector(`.cart`);
+const cartCount = document.querySelector(`.cart-item-count`);
 const cartContent = document.querySelector(`.cart-content`);
 const cartItems = document.querySelector(`.cart-items`);
 const cartTotal = document.querySelector(`.cart-total`);
@@ -72,12 +73,16 @@ class UI{
 
                     // get product from products
                     let cartItem = {...storage.getProduct(id), amount:1};
-                    // add items to cart
+                    // save items to cart
                     cart = [...cart, cartItem];
                     // save cart in localStorage 
                     storage.saveCart(cart);
                     // set cart value
                     this.setCartValue(cart)
+                    // display items in cart
+                    this.diplayCartItems(cartItem)
+                    // show cart
+                    this.showCart()
                 })
                 
         });
@@ -90,10 +95,29 @@ class UI{
             itemsTotal += item.amount;
         })
         cartTotal.innerHTML = parseFloat(tempTotal.toFixed(2));
-        cartItems.innerHTML = itemsTotal
-        console.log(cartTotal, cartItems)
+        cartCount.innerHTML = itemsTotal;
+    };
+    diplayCartItems(item){
+        const div = document.createElement(`div`);
+        div.classList.add(`cart-items`);
+        div.innerHTML = `<img src=${item.image}>
+        <div>
+            <h4>${item.title}</h4>
+            <h5>${item.price}</h5>
+            <span class="remove-item" data-id=${item.id}>remove</span>
+        </div>
+        <div>
+            <i class="fas fa-chavon-up" data-id=${item.id}>up</i>
+            <p class="item-amount">${item.amount}</p>
+            <i class="fas fa-chavon-down" data-id=${item.id}>down</i>
+        </div>`;
+        cartContent.appendChild(div);
+    };
+    showCart(){
+        cartOverlay.classList.add(`transparentBckg`);
+        cartDom.classList.add(`show-cart`);
     }
-}
+};
 // local storage   
 class storage{
     static saveProduct(products){
