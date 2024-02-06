@@ -1,68 +1,51 @@
 {
-    "items":[
+    "items": [
         {
-            "sys":{"id":"1"},
-            "fields":{
-                "title":"product 1",
-                "price":"25000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image1.JPG"}}}
-            }
+            "id": "1",
+            "title": "product 1",
+            "price": "25000",
+            "image": "/img/shoe/image1.JPG"
         },
         {
-            "sys":{"id":"2"},
-            "fields":{
-                "title":"product 2",
-                "price":"24000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image2.JPG"}}}
-            }
+            "id": "2",
+            "title": "product 2",
+            "price": "25000",
+            "image": "/img/shoe/image2.JPG"
         },
         {
-            "sys":{"id":"3"},
-            "fields":{
-                "title":"product 3",
-                "price":"25500",
-                "image":{"fields":{"files":{"url":"/img/shoe/image3.JPG"}}}
-            }
+            "id": "3",
+            "title": "product 3",
+            "price": "25000",
+            "image": "/img/shoe/image3.JPG"
         },
         {
-            "sys":{"id":"4"},
-            "fields":{
-                "title":"product 4",
-                "price":"23500",
-                "image":{"fields":{"files":{"url":"/img/shoe/image4.JPG"}}}
-            }
+            "id": "4",
+            "title": "product 4",
+            "price": "25000",
+            "image": "/img/shoe/image4.JPG"
         },
         {
-            "sys":{"id":"5"},
-            "fields":{
-                "title":"product 5",
-                "price":"19000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image5.JPG"}}}
-            }
+            "id": "5",
+            "title": "product 5",
+            "price": "25000",
+            "image": "/img/shoe/image5.JPG"
         },
         {
-            "sys":{"id":"6"},
-            "fields":{
-                "title":"product 6",
-                "price":"28000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image6.JPG"}}}
-            }
+            "id": "6",
+            "title": "product 6",
+            "price": "25000",
+            "image": "/img/shoe/image6.JPG"
         },
         {
-            "sys":{"id":"7"},
-            "fields":{
-                "title":"product 7",
-                "price":"32000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image7.JPG"}}}
-            }
+            "id": "7",
+            "title": "product 7",
+            "price": "25000",
+            "image": "/img/shoe/image7.JPG"
         },
         {
-            "sys":{"id":"8"},
-            "fields":{
-                "title":"product 8",
-                "price":"29000",
-                "image":{"fields":{"files":{"url":"/img/shoe/image8.JPG"}}}
-            }
+            "id": "8",
+            "title": "product 8",
+            "price": "25000",
+            "image": "/img/shoe/image8.JPG"
         }
-    ]
-}
+    ]}

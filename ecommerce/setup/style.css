@@ -171,6 +171,17 @@ body {
 .bag-btn:hover{
     color: var(--primaryWhite);
 }
+.flexy {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: left; */
+}
+.remove-item{
+    cursor: pointer;
+}
+.show-removefrom-cart{
+    visibility: hidden;
+}
 .product:hover .bag-btn {
     transform: translateX(0);
 }
@@ -254,6 +265,12 @@ body {
 .cart-items h5{
     margin: 0.5rem 0rem;
     letter-spacing: var(--spacing);
+}
+.remove-item:hover{
+    color: red;
+}
+.fa-chevron-down:hover, .fa-chevron-up:hover{
+    color: #f09d51;
 }
 .cart-footer{
     letter-spacing: var(--spacing);
