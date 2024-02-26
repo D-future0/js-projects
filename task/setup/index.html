@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="projectCost" placeholder="Enter Project Cost" max="25000">
+    <div id="initialContribution"></div>
+    <div id="visaRoute"></div>
+    <div id="totalRepayment"></div>
+    <div id="months"></div>
+    <div id="monthlyRepayment"></div>
+    <script>
+        const projectCost = document.querySelector(`#projectCost`);
+        const month = document.querySelector(`#months`);
+        const initialContribution = document.querySelector(`#initialContribution`);
+        const visaRoute = document.querySelector(`#visaRoute`);
+        const totalRepayment = document.querySelector(`#totalRepayment`);
+        const monthlyRepayment = document.querySelector(`#monthlyRepayment`);
+
+
+        // functionalities
+        const calMonth = (value) => {
+            let monthRange = ''
+            if (value >= 2500 && value < 25001) {
+                if (value >= 2500 && value < 3001) return costMath(value, 18);
+                if (value >= 3001 && value < 3751) return costMath(value, 19);
+                if (value >= 3751 && value < 5001) return costMath(value, 20);
+                if (value >= 5001 && value < 6251) return costMath(value, 21);
+                if (value >= 6251 && value < 7501) return costMath(value, 22);
+                if (value >= 7501 && value < 8751) return costMath(value, 23);
+                if (value >= 8751 && value < 10001) return costMath(value, 24);
+                if (value >= 10001 && value < 11251) return costMath(value, 25);
+                if (value >= 11251 && value < 12501) return costMath(value, 26);
+                if (value >= 12501 && value < 13751) return costMath(value, 27);
+                if (value >= 13751 && value < 15001) return costMath(value, 28);
+                if (value >= 15001 && value < 16251) return costMath(value, 29);
+                if (value >= 16251 && value < 17501) return costMath(value, 30);
+                if (value >= 17501 && value < 18751) return costMath(value, 31);
+                if (value >= 18751 && value < 20001) return costMath(value, 32);
+                if (value >= 20001 && value < 21251) return costMath(value, 33);
+                if (value >= 21251 && value < 22501) return costMath(value, 34);
+                if (value >= 22501 && value < 23751) return costMath(value, 35);
+                if (value >= 23751 && value < 25001) return costMath(value, 36);
+            }
+            return invalidInput();
+        }
+        const costMath = (value, monthRange) => {
+            if(value >= 2500 && value < 25001){
+                let calInitialContribution = (value / 100) * 25;
+            let calVisaRoute = (value / 100) * 75;
+            let calTotalRepayment = (calVisaRoute * 3) / 2;
+            let calmonth = parseFloat(monthRange)
+            let calMonthlyRepayment = calTotalRepayment / calmonth;
+
+            initialContribution.innerHTML = `<h3>Initial Contribution : ${calInitialContribution}%</h3>`;
+            visaRoute.innerHTML = `<h3>Visa Route : ${calVisaRoute}%</h3>`;
+            totalRepayment.innerHTML = `<h3>Total Repayment : ${calTotalRepayment}%</h3>`;
+            month.innerHTML = `<h3>Months : ${calmonth}</h3>`;
+            monthlyRepayment.innerHTML = `<h3>Monthly Repayment : ${calMonthlyRepayment}</h3>`;
+            }
+            return 0;
+        };
+        
+        const invalidInput = () => {
+            initialContribution.innerHTML = ``;
+            visaRoute.innerHTML = ``;
+            totalRepayment.innerHTML = ``;
+            month.innerHTML = ``;
+            monthlyRepayment.innerHTML = ``;
+        };
+        
+        projectCost.addEventListener('input', (e) => {
+            let myInputAmount = e.target.value
+            calMonth(myInputAmount)
+        })
+    </script>
+</body>
+
+</html>
